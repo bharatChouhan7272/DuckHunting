@@ -1,0 +1,126 @@
+body
+{
+    margin : 0;
+    padding : 0;
+    cursor: url(image/aim.png),text;
+    overflow: hidden;
+}
+body:before
+{
+    content: '';
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: url(image/bg.png) repeat-x bottom left ;
+}
+@keyframes batfly 
+{
+    0%
+    {
+        left: 150%;
+        top: 10%;
+    }
+    25%
+    {
+        left: 80%;
+        top: 50%;
+    }
+    50%
+    {
+        left: 50%;
+        top: 30%;
+    }
+    75%
+    {
+        left: 40%;
+        top: 30%;
+    }
+    100%
+    {
+        left: -50%;
+        top: 10%;
+    }
+}
+input + label
+{
+    position: absolute;
+    left: -100px;
+    z-index: 1;
+    width: 36px;
+    height: 34px;
+    display: block;
+    z-index: 5 ;
+    translate: translate(-50%,-50%);
+    background: url(image/duck_black.png) no-repeat left center;
+    background-position: -138px 0;
+}
+ input:checked + label
+{
+    opacity: 0;
+    transition: 0.5s;
+    transform: rotate(90deg);
+    transform-origin: 60;
+    z-index: -5;
+}
+.bat:nth-last-of-type(1)
+{
+    animation: batfly 10s linear 1s infinite ;
+    cursor: url(image/shoot.png), text ;
+}
+
+.bat:nth-last-of-type(2)
+{
+    animation: batfly 25s linear 2s infinite ;
+    cursor: url(image/shoot.png), text ;
+}
+
+
+.bat:nth-last-of-type(3)
+{
+    animation: batfly 30s linear 3s infinite ;
+    cursor: url(image/shoot.png), text ;
+}
+
+
+.bat:nth-last-of-type(4)
+{
+    animation: batfly 50s linear 5s infinite ;
+    cursor: url(image/shoot.png), text ;
+}
+
+
+.bat:nth-last-of-type(5)
+{
+    animation: batfly 60s linear 6s infinite ;
+    cursor: url(image/shoot.png), text ;
+}
+
+
+.score
+{
+    position: absolute;
+    bottom: 0 ;
+    height: 50px ;
+    line-height: 50px;
+    background-color: burlywood;
+    width: 100%;
+    z-index: 2 ;
+    text-align: center;
+}
+.score:after
+{
+    content: counter(score) ;
+    display: inline-block;
+}
+.score:before
+{
+    content: 'score : ';
+    display: inline-block;
+    margin-right : 10px ;
+}
+input:checked
+{
+    counter-increment: score;
+}
